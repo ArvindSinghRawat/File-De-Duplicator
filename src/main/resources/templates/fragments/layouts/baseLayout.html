@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org">
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet"
@@ -9,7 +10,7 @@
           th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}"/>
     <script defer
             th:src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}"></script>
-    <title layout:title-pattern="$CONTENT_TITLE"></title>
+    <title layout:title-pattern="$CONTENT_TITLE: $LAYOUT_TITLE">File De-Duplicator</title>
 </head>
 <body>
 <!--Footer-->
