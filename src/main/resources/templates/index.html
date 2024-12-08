@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet"
-          th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}"/>
+          th:href="@{/webjars/font-awesome/6.7.1/css/all.css}"/>
     <link rel="stylesheet"
-          th:href="@{/css/app.css}"/>
+          th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}"/>
     <script defer
             th:src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}"></script>
-    <script defer
-            th:src="@{/js/app.js}"></script>
     <title>File De-Duplicator</title>
 <body>
 <h1 class="h1 text-center">File De-duplicator</h1>
+
+<!--Footer-->
+<footer th:replace="~{/fragments/commons/footer::footer}"></footer>
 </body>
 </html>
