@@ -1,22 +1,17 @@
 <!DOCTYPE html>
 <html lang="en"
-      xmlns:th="http://www.thymeleaf.org">
+      layout:decorate="~{/fragments/layouts/baseLayout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet"
-          th:href="@{/webjars/font-awesome/6.7.1/css/all.css}"/>
-    <link rel="stylesheet"
-          th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}"/>
-    <script defer
-            th:src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}"></script>
-    <title>File De-Duplicator</title>
+    <title>File De-Duplicator - Home</title>
+</head>
 <body>
-<!--Footer-->
-<header th:replace="~{/fragments/commons/header::header}"></header>
 
-<h1 class="h1 text-center">File De-duplicator</h1>
+<main layout:fragment="content">
+    <h1 class="h1 text-center">File De-duplicator</h1>
+</main>
 
-<!--Footer-->
-<footer th:replace="~{/fragments/commons/footer::footer}"></footer>
 </body>
 </html>
