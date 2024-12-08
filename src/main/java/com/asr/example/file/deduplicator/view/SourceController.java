@@ -1,7 +1,11 @@
 package com.asr.example.file.deduplicator.view;
 
 import com.asr.example.file.deduplicator.dto.request.DirectoryRequest;
+import com.asr.example.file.deduplicator.service.DirectoryService;
 import jakarta.validation.Valid;
+import lombok.AccessLevel;
+import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -15,7 +19,11 @@ import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/source")
+@RequiredArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class SourceController {
+
+    DirectoryService directoryService;
 
     @PostMapping
     String saveSource(
@@ -32,7 +40,12 @@ public class SourceController {
         } else if (request == null || !StringUtils.hasText(request.getSourcePath())) {
             model.addAttribute("failureMessage", "Provided path is empty");
         } else {
-            model.addAttribute("successMessage", String.format("Successfully saved %s directory", request.getSourcePath()));
+            directoryService
+                    .savePath(request)
+                    .ifPresentOrElse(
+                            err -> model.addAttribute("failureMessage", err),
+                            () -> model.addAttribute("successMessage", String.format("Successfully saved %s directory", request.getSourcePath()))
+                    );
         }
         return "index";
     }
