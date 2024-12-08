@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: File De-duplicator
+  app:
+    async:
+      corePoolSize: 4
+      maxPoolSize: 16
+      queueCapacity: 1000
+      threadNamePrefix: custom-executor-
