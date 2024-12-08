@@ -7,3 +7,4 @@ spring:
       maxPoolSize: 16
       queueCapacity: 1000
       threadNamePrefix: custom-executor-
+      maxBatchSize: 1000

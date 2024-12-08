@@ -14,12 +14,14 @@ public class ExecutorProperties {
     int maxPoolSize;
     int queueCapacity;
     String threadNamePrefix;
+    long maxBatchSize;
 
     @ConstructorBinding
-    public ExecutorProperties(int corePoolSize, int maxPoolSize, int queueCapacity, String threadNamePrefix) {
+    public ExecutorProperties(int corePoolSize, int maxPoolSize, int queueCapacity, String threadNamePrefix, long maxBatchSize) {
         this.corePoolSize = corePoolSize;
         this.maxPoolSize = maxPoolSize;
         this.queueCapacity = queueCapacity;
         this.threadNamePrefix = threadNamePrefix;
+        this.maxBatchSize = maxBatchSize;
     }
 }
